@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Indianpropertywala::Application.config.secret_token = 'd93afa764989c724b8870c8aebb2f616934225bd96799b13532fd2339d61710d33ca776a8da784a0b0b9e55e306f6e6d779d39a7b253501394785eedfffaa7b4'
+Indianpropertywala::Application.config.secret_token = 'f7bd4638cc11e88e90054478c15a0dca17cbc0c6f253585f55c4c74e6eef9ad19cd11049c633bb59c82715535f8a4644977ba290fc612e3f3d2ddc7f2b967703'
