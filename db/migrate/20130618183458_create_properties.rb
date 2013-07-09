@@ -1,7 +1,7 @@
 class CreateProperties < ActiveRecord::Migration
   def change
     create_table :properties do |t|
-      t.stirng :type
+      t.string :type
       t.string :subtype
       t.string :transaction_type
       t.string :city

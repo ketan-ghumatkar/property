@@ -11,7 +11,77 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130618183008) do
+ActiveRecord::Schema.define(:version => 20130618183842) do
+
+  create_table "messages", :force => true do |t|
+    t.string   "sender_name"
+    t.string   "country"
+    t.string   "city"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "price_range"
+    t.string   "property_type"
+    t.string   "buying_year"
+    t.string   "locality"
+    t.string   "content"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
+
+  create_table "profiles", :force => true do |t|
+    t.string   "city"
+    t.string   "mobile"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "profiles", ["user_id"], :name => "index_profiles_on_user_id"
+
+  create_table "properties", :force => true do |t|
+    t.string   "type"
+    t.string   "subtype"
+    t.string   "transaction_type"
+    t.string   "city"
+    t.string   "locality"
+    t.string   "bedroom"
+    t.string   "bathroom"
+    t.string   "furnish"
+    t.string   "covered_area"
+    t.string   "plot_area"
+    t.string   "carpet_area"
+    t.string   "total_price"
+    t.string   "unit_price"
+    t.boolean  "display_price"
+    t.integer  "floor"
+    t.integer  "total_floor"
+    t.text     "description"
+    t.string   "possession_status"
+    t.string   "spam_check"
+    t.integer  "user_id"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "properties", ["user_id"], :name => "index_properties_on_user_id"
+
+  create_table "requirements", :force => true do |t|
+    t.string   "type"
+    t.string   "subtype"
+    t.string   "city"
+    t.string   "min_area"
+    t.string   "max_area"
+    t.string   "min_budget"
+    t.string   "max_budget"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "requirements", ["user_id"], :name => "index_requirements_on_user_id"
 
   create_table "roles", :force => true do |t|
     t.string   "name"
